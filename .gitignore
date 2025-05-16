@@ -1,0 +1,18 @@
+# Archivos de configuración de IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Logs, caches y demás archivos temporales
+out/
+*.log
+
+# Otros archivos de compilación y ejecución comunes
+*.class
+*.jar
+*.war
+*.ear
+
+# Archivos de sistema (opcional pero recomendable)
+.DS_Store
+Thumbs.db
