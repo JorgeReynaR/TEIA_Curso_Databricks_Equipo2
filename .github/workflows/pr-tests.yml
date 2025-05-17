@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu 22.04   # Cambiar si usa otra Versión o si está Obsoleta
+    runs-on: ubuntu-22.04   # Cambiar si usa otra Versión o si está Obsoleta
 
     steps:
       - name: Checkout Repositorio
