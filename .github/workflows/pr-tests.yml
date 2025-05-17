@@ -1,28 +1,27 @@
-name: Run JAR Tests on Pull Request
+name: Correr Cssos de Pruebas en caso de un Pull Request
 
 on:
+  push:
+    branches:
+      - main  # Rama Principal
   pull_request:
     branches:
       - main  # Rama Principal
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu 22.04   # Cambiar si usa otra Versión o si está Obsoleta
 
     steps:
-      - name: Checkout repo
+      - name: Checkout Repositorio
         uses: actions/checkout@v3
 
-      - name: Set up Java
+      - name: Configurar Java
         uses: actions/setup-java@v4
         with:
+          java-version: '8'  # Cambiar si usa otra Versión
           distribution: 'temurin'
-          java-version: '17'  # Cambiar si usa otra Versión
-
-      - name: Build project (si usas Maven o Gradle)
-        run: |
-          ./gradlew build  # O mvn package
-
-      - name: Run tests from JAR
-        run: |
-          java -jar path/to/your/test-runner.jar
+          cache: 'sbt'
+      - name: Ejecutar Pruebas desde el Archivo
+        run: sbt test
+        working-directory: ./Code
