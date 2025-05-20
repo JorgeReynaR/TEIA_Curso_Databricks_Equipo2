@@ -1,4 +1,4 @@
-name: Correr Cssos de Pruebas en caso de un Pull Request
+name: Ejecutar Casos de Pruebas al detectar un Pull Request
 
 on:
   push:
